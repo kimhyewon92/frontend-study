@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* body(상속) -> *(전체) -> 태그 -> 클래스 -> 아이디 -> 인라인(요소에 주는 스타일) -> !important */
+    /* 라이브러리 이용할때 필요 */
+    /* 개발자 도구로 확인 -> 우선순위 점수가 높은순으로 표시됨 */
+    div {
+      /* 점수가 무한대
+        되도록이면 사용 지양, 남발하면 나중에 스타일을 바꾸려고 할 때 수정이 불가
+        
+        정말 이 스타일이 무조건 적용되어야 하거나 절대 변경되어서는 안되는 경우에만 사용!
+      */
+      color: red !important;
+    }
+
+    #hello {
+      color: yellow;
+    }
+
+    /* .hello {
+      color: green;
+    } */
+    
+    /* 선택자를 여러 개 사용하여 명확하게 선택하면 우선순위 점수가 올라감
+        태그 넣어서 1점더 추가하면 아래 orange보다 순위가 높아짐 */
+    div.hello {
+      color: green;
+    }
+    
+    /* 점수가 같으면 가장 마지막에 해석된 스타일이 적용 */
+    .hello {
+      color: orange;
+    }
+
+    div {
+      color: royalblue;
+    }
+
+    * {
+      color: darkblue;
+    }
+
+    body {
+      color: violet;
+      /* 상속은 브라우저 기본 스타일보다도 우선순위가 낮음 */
+    }
+
+  </style>
+</head>
+<body>
+  <div
+    id="hello"
+    class="hello"
+    style="color: olive;"
+  > 
+    Hello world!
+  </div>
+</body>
+</html>

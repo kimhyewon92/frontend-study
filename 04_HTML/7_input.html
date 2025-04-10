@@ -32,13 +32,13 @@
   <input type="text" placeholder="이름을 입력하세요!" class="hidden">
 
   <!-- 비활성화: 수정 불가, Tab키로 선택(focus) 불가, submit 불가 -->
-   <input type="text" value="disabled 테스트" disabled>
-   <!-- (참고) 읽기 전용: 수정 불가, Tab키로 선택(focus) 가능, submit 가능 -->
-   <input type="text" value="readonly 테스트" readonly>
+  <input type="text" value="disabled 테스트" disabled>
+  <!-- (참고) 읽기 전용: 수정 불가, Tab키로 선택(focus) 가능, submit 가능 -->
+  <input type="text" value="readonly 테스트" readonly>
 
-   <hr>
+  <hr>
 
-   <!-- 체크박스 -->
+  <!-- 체크박스 -->
   <input type="checkbox"> Apple
   <input type="checkbox"> Banana
   
@@ -109,7 +109,7 @@
 
       <button type="button">닫기</button>
       <!-- button 태그의 장점
-       요소 내부에 텍스트 뿐만 아니라 다른 태그를 넣을 수 있음 -->
+      요소 내부에 텍스트 뿐만 아니라 다른 태그를 넣을 수 있음 -->
       <button type="button"><b>닫기</b><br>테스트</button>
 
       <hr>
@@ -200,6 +200,8 @@
       </form>
 
       <form action="/login" method="post">
+        <!-- name 속성: 서버로 전달할 때 유니크하게 구분하기 위한 이름 -->
+        <!-- ex) id: abc pw: 1234  request.id 서버에서 해당정보 찾을때 -->
         <input type="text" name="id">
         <input type="password" name="pw">
         <button type="submit">로그인</button>
