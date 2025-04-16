@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    /* 공통 스타일 */
+    * {
+      box-sizing: border-box;
+    }
+    .cart-background {
+      background-color: lightblue;
+      padding: 20px;
+    }
+    .inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+        table{
+      background-color: white;
+      border-collapse: collapse;
+    }
+    .cart-list {
+      border-radius: 10px;
+      width: 100%;
+    }
+    .itemwidth {
+      width: 300px;
+    }
+    tr td img {
+      width: 50px;
+    }
+    td:nth-child(n+3) {
+      text-align: center;
+    }
+    td:first-child {
+      text-align: center;
+    }
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+    }
+    button {
+      background-color: orange;
+      border: none;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 10px;
+      font-size: 20px;
+    }
+    .cart-list tr:nth-child(4) td {
+      text-align: right;
+    }
+    .cart-list tr {
+      border-bottom: 3px solid lightblue;
+    }
+    .cart-list th,
+    .cart-list td {
+      padding: 15px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="cart-background">
+    <!-- 가운데 정렬을 위한 div -->
+    <div class="inner">
+      <h2>장바구니</h2>
+      <table class="cart-list">
+        <!-- 4행 5열 만들기 -->
+        <!-- 그림 50px, max 700px th에 긴너비주면 나머지컬럼은 알아서 -->
+        <tr>
+          <th></th>
+          <th class="itemwidth">ITEM</th>
+          <th>AMOUNT</th>
+          <th>PRICE</th>
+          <th>TOTAL</th>
+        </tr>
+        <tr>
+          <td><img src="item1.png" alt="camera"></td>
+          <td>카메라</td>
+          <td>1</td>
+          <td>100,000</td>
+          <td>100,000</td>
+        </tr>
+        <tr>
+          <td><img src="item2.png" alt="shoes"></td>
+          <td>신발</td>
+          <td>2</td>
+          <td>59,000</td>
+          <td>118,000</td>
+        </tr>
+        <tr>
+          <td colspan="5">주문금액 218,000원</td>
+          <!-- <td></td>
+          <td></td>
+          <td></td>
+          <td></td> -->
+        </tr>
+      </table>
+      <div class="bottom">
+        <a href="#">계속 쇼핑하기</a>
+        <button type="button">구매하기</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
