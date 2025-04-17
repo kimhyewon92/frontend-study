@@ -11,27 +11,37 @@
       box-sizing: border-box;
     }
     .cart-background {
-      background-color: lightblue;
-      padding: 20px;
+      /* width 명시적으로 주기 (안넣어도 됨) */
+      width: 100%;
+      background-color: lightsteelblue;
+      padding: 30px;
     }
     .inner {
+      width: 100%;
       max-width: 700px;
       margin: 0 auto;
     }
-        table{
+    table{
       background-color: white;
       border-collapse: collapse;
     }
     .cart-list {
-      border-radius: 10px;
       width: 100%;
+      border-radius: 10px;
     }
+    /* .cart-list th:nth-child(2) 로 쓰기 */
+    /* th에 긴 너비주면 나머지컬럼은 알아서 */
     .itemwidth {
-      width: 300px;
+      /* 의미: 다른 셀들은 최소폭을 가져가면서 해당 셀은 최대 400px까지 늘어남 */
+      width: 400px;
     }
     tr td img {
       width: 50px;
     }
+    .cart-list td:nth-child(2) {
+      text-align: left;
+    }
+    
     td:nth-child(n+3) {
       text-align: center;
     }
@@ -42,21 +52,36 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 20px;
+      padding: 20px 0;
+      font-size: 20px;
     }
     button {
       background-color: orange;
       border: none;
+      /* tab 눌러서 선택되는 outline */
+      outline: none;
       color: white;
       padding: 15px 30px;
       border-radius: 10px;
+      /* font-size: inherit;으로 줘도 됨 (브라우저 user agent stylesheet 우선되어서 적용이 안되었다면!) */
       font-size: 20px;
+      cursor: pointer;
     }
-    .cart-list tr:nth-child(4) td {
+    button:hover {
+      background-color: chocolate;
+    }
+    button:active {
+      background-color: chocolate;
+    }
+    /* 자식 선택자 사용 시 주의! */
+    /* .cart-list > tbody > tr:last-child > td {}로 사용하기 tbody를 tr태그 상위에 넣어주기
+
+    .cart-list tr:last-child td {
       text-align: right;
     }
+    /* 아래에 각 셀들에 넣어줘도 됨 */
     .cart-list tr {
-      border-bottom: 3px solid lightblue;
+      border-bottom: 2px solid lightsteelblue;
     }
     .cart-list th,
     .cart-list td {
@@ -72,7 +97,7 @@
       <h2>장바구니</h2>
       <table class="cart-list">
         <!-- 4행 5열 만들기 -->
-        <!-- 그림 50px, max 700px th에 긴너비주면 나머지컬럼은 알아서 -->
+        <!-- tr만들면 자동으로 tbody로 만들어짐, 데이터직접입력: 하드코딩? -->
         <tr>
           <th></th>
           <th class="itemwidth">ITEM</th>

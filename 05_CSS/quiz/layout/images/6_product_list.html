@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    /* 단방향 애니메이션을 만드는 step
+      1. 시작 스타일 만들기(before)
+      2. 최종 스타일 만들기(after)
+      3. 언제, 어떻게 했을때 변하는지 정의(예: 마우스를 올렸을 때)
+        -> CSS 만으로는 hover가 최대임, JS 배우면 클릭 시, 드래그 시, 키 입력 시 등 전부 활용 가능
+      4. transition 적용
+    */
+
+    .shop-background {
+      background-color: #eee;
+      padding: 20px;
+    }
+    .shop-container {
+      display: flex;
+      width: 90%;
+      margin: 0 auto;
+    }
+    .shop-item {
+      width: 33%;
+      margin: 10px;
+      position: relative;
+    }
+    .shop-item img{
+      width: 100%;
+      /* 오버레이랑 이미지랑 높이가 안맞는 현상 
+        => 이미지는 인라인 요소라 글자의 베이스라인이 존재 */
+      display: block;
+    }
+    .overlay {
+      width: 100%;
+      height: 100%;
+      color: #fff;
+      /* background-color: #000; */
+      /* 배경색을 검은색으로 안하고 opacity 를 주고 할 수도 있음 */
+      background-color: rgba(0, 0, 0, 0.5);
+      position: absolute;
+      top: 0;
+      left: 0;
+      /* display none이면 애니메이션 효과가 안들어감 */
+      /* Tip! 화면 전체 영역 덮기(예: 모달창 백그라운드, 영상 덮개) */
+      /* position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 999; */
+
+      /* 전 상태 */
+      opacity: 0;
+      transition: 1s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      row-gap: 20px;
+    }
+    .overlay:hover {
+      /* 후 상태 */
+      opacity: 1;
+    }
+    .btn {
+      padding: 14px 30px;  
+      font-size: 20px;    
+      outline: none;
+      border: 2px solid #fff;
+      border-radius: 10px;
+      background-color: transparent;
+      color: #fff;
+      cursor: pointer;
+    }
+    .btn:hover {
+      color: #333;
+      background-color: #eee;
+    }
+    .overlay-up {
+      width: 100%;
+      height: 50%;
+      background-color: rgba(0, 0, 0, 0.3);
+      
+      /* 위치 옮기기: position/transform 중에 하나 적용 */
+      position: absolute;
+      top: 100%;
+      transition: 1s;
+    }
+    /* 바로 하위요소여서 선택이 가능..? */
+    .shop-item:hover .overlay-up {
+      top: 50%;
+    }
+    .overflow-hidden {
+      overflow: hidden;
+    }
+    .overlay-up .price {
+      color: #fff;
+      font-size: 20px;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="shop-background">
+    <div class="shop-container">
+      <div class="shop-item">
+        <img src="product1.jpg" alt="상품1">
+        <div class="overlay">이 상품은 ...</div>
+      </div>
+      <div class="shop-item">
+        <img src="product2.jpg" alt="상품2">
+        <div class="overlay">
+          <button type="button" class="btn">상세보기</button>
+          <button type="button" class="btn">구매하기</button>
+        </div>
+      </div>
+      <div class="shop-item overflow-hidden">
+        <img src="product3.jpg" alt="상품3">
+        <div class="overlay-up">
+          <span class="price">Price: $4</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
