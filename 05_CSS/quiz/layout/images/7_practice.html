@@ -1,77 +1,122 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 
-  <style>
-    .loginBackground {
-      width: 100%;
-    }
-    .center {
-      width: 40%;
-      margin: 0 auto;
-      background-color: skyblue;
-      border-radius: 10px;
-      padding: 20px;
-    }
-    .inputbtns {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      row-gap: 30px;
-    }
-    .idpw {
-      display: flex;
-      flex-direction: column;
-    }
-    .btns {
-      width: 80%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      row-gap: 20px;
-    }
-    button {
-      width: 100%;
-      /* padding: 10px 80px; */
-      border-radius: 10px;
-      border: none;
-      font-size: 16px;
-    }
-    input {
-      width: 80%;
-    }
-    .text-input {
-      width: 100%;
-      padding: 10px;
-      font-size: 20px;
-      border: 2px solid #ccc;
-      border-radius: 6px;
-      transition: 0.5s;
-      margin-bottom: 20px;
-      /* border 변경 전 outline 초기화해야함 */
-      outline: none;
-    }
-  </style>
+    <style>
+        * {
+        box-sizing: border-box;
+        }
+        .loginBackground {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+        .loginArea {
+            width: 40%;
+            background-color: lightblue;
+            border: 1px solid aquamarine;
+            border-radius: 10px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .material-symbols-outlined {
+            font-size: 120px;
+            color: cornflowerblue;
+            display: flex;
+            justify-content: center;
+        }
+        .iconSmall {
+            font-size: 50px;
+        }
+        .top {
+            margin-bottom: 60px;
+        }
+        .idpw {
+            margin-top: 100px;
+        }   
+        .idPw div + div {
+            margin-top: 10px;
+        }
+        .inputForm {
+            outline: none;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            width: 60%;
+            padding: 10px;
+            font-size: 18px;
+            transition: 0.5s;
+        }
+        .inputForm:focus {
+            border-color: royalblue;
+        }
+        .loginCheck {
+            margin-top: 10px;
+        }
+        .bottom_btns {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            row-gap: 10px;
+            margin: 40px 0;
+        }
+        .btns {
+            background-color: cornflowerblue;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            width: 75%;
+        }
+        .btns:hover {
+            background-color: rgb(16, 32, 77);
+            color: white;
+        }
+        .flex {
+            display: flex;
+            column-gap: 15px;
+        }
+        
+    </style>
 </head>
 <body>
-  <div class="loginBackground">
-    <div class="center">
-      <div class="inputbtns">
-        <div class="idpw">
-          <label for="id">ID
-          <input type="text" class="text-input"></label>
-          <label for="id">PW
-          <input type="password" class="text-input"></label>
+    <div class="loginBackground">
+        <div class="loginArea">
+            <div class="top">
+                <span class="material-symbols-outlined">login</span>
+            </div>
+            <div class="idPw">
+                <div class="flex">
+                    <span class="material-symbols-outlined iconSmall">person</span>
+                    <input type="text" placeholder="아이디를 입력하세요." class="inputForm">
+                </div>
+                <div class="flex">
+                    <span class="material-symbols-outlined iconSmall">password</span>
+                    <input type="password" placeholder="비밀번호를 입력하세요." class="inputForm">
+                </div>
+            </div>
+            <div class="loginCheck flex">
+                <label for="save">
+                <input type="checkbox" id="save">아이디저장</label>
+                <label for="autoLogin">
+                <input type="checkbox" id="autoLogin">자동 로그인</label>
+            </div>
+            <div class="bottom_btns">
+                <button type="button" class="btns">로그인</button>
+                <button type="button" class="btns">회원가입</button>
+            </div>
         </div>
-        <div class="btns">
-          <button type="button">로그인</button>
-          <button type="button">회원가입</button>
-        </div>
-      </div>
-  </div>
+    </div>
 </body>
 </html>
