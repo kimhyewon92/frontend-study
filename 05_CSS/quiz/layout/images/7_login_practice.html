@@ -20,9 +20,9 @@
             padding: 40px;
         }
         .loginArea {
-            width: 40%;
+            width: 50%;
+            min-width: 400px;
             background-color: lightblue;
-            border: 1px solid aquamarine;
             border-radius: 10px;
             padding: 30px;
             display: flex;
@@ -41,17 +41,19 @@
         .top {
             margin-bottom: 60px;
         }
-        .idpw {
-            margin-top: 100px;
-        }   
         .idPw div + div {
             margin-top: 10px;
+        }
+        .idPw {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .inputForm {
             outline: none;
             border: 2px solid transparent;
             border-radius: 10px;
-            width: 60%;
+            width: 100%;
             padding: 10px;
             font-size: 18px;
             transition: 0.5s;
@@ -60,14 +62,14 @@
             border-color: royalblue;
         }
         .loginCheck {
-            margin-top: 10px;
+            margin-top: 20px;
         }
         .bottom_btns {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
             row-gap: 10px;
-            margin: 40px 0;
         }
         .btns {
             background-color: cornflowerblue;
