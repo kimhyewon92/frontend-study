@@ -69,6 +69,9 @@ header .logo img {
 header nav ul {
   display: flex;
 }
+header div a {
+  font-weight: 700;
+}
 header nav ul li {
   padding: 10px 20px;
   font-weight: 700;

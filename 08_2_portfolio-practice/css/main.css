@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+
+    /* 테스트용 */
+    /* height: 3000px; */
+    
+}
+
+  /* 영문에만 적용할 폰트 */
+.font-en {
+    font-family: "Open Sans", sans-serif;
+}
+#header {
+    background-color: rgb(123, 123, 128);
+    color: white;
+}
+a {
+    text-decoration: none;
+    /* color: #333; */
+    /* inherit 는 색상 바뀔때 자동적용됨 */
+    color: inherit;
+}
+/* 가운데 정렬을 위한 클래스 */
+.inner {
+    /* 고정 길이 = 고정형 */
+    /* width: 1200px; */
+    /* 최대값만 제한 = 반응형 */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* HEADER */
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #c8c8c8;
+    /* 그림자 : 수평 수직 blur 색깔 순서 */
+    /* box-shadow: 0 2px 8px rgba(204, 204, 204, 0.8); */
+
+    /* 고정된 헤더 만들기 */
+    /* fixed가 되면 width의 기준이 부모 요소가 아니라 뷰포트가 되면서 기준이 끊겨버리고, 내용에 맞춰 최소한으로 축소됨 */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 9;
+}
+header > .inner {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .inner .logo {
+    font-weight: 700;
+    font-size: 25px;
+}
+.logo li + li::before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 12px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+header nav ul {
+    display: flex;
+}
+header nav ul li {
+    padding: 10px 20px;
+    font-weight: 700;
+}
+.fixed-bg {
+    height: 700px;
+    /* background-color: pink; */
+    background-image: url("/08_2_portfolio-practice/image/work3.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
