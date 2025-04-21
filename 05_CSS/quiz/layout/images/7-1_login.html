@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=visibility" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
   <style>
     * {
       /* content박스가 기본, 패딩, content로 크기가 변경되어서 실제크기로 맞추려면 border-box */
@@ -56,6 +56,11 @@
       border: 1px solid #c5ccd2;
       position: relative;
     }
+    .login-container .id-box.focused,
+    .login-container .pw-box.focused {
+      border: 2px solid #09aa5c;
+    }
+
     .login-container .id-box {
       border-radius: 8px 8px 0 0;
     }
@@ -71,7 +76,9 @@
       transition: 0.3s;
     }
     /* .form-input:focus ~ .text-label 도 선택되긴하지만 +가 맞음! */
-    .form-input:focus + .text-label {
+    .login-container .form-input:focus + .text-label,
+    .login-container .id-box.on .text-label,
+    .login-container .pw-box.on .text-label {
       bottom: 30px;
       font-size: 12px;
     }
@@ -95,12 +102,62 @@
       <div class="pw-box">
         <input type="password" id="pw" class="form-input">
         <label for="pw" class="text-label">비밀번호</label>
-        <span class="material-symbols-outlined icon-eye">visibility</span>
+        <span class="material-symbols-outlined icon-eye">visibility_off</span>
       </div>
       
       <button type="button" class="btn btn-login">로그인</button>
       <button type="button" class="btn btn-join">회원가입</button>
     </div>
   </div>
+
+  <!-- dom 배운 후 추가 작성 -->
+  <script>
+    const inputEls = document.querySelectorAll('input.form-input');
+    const eyeIcon = document.querySelector('.icon-eye');
+    const pwInput = document.getElementById('pw');
+
+    inputEls.forEach(function (inputEl, index) {
+      const parentEl = inputEl.parentElement;
+      console.log(parentEl);
+      
+      inputEl.addEventListener('focus', function () {
+        parentEl.classList.add('focused');
+      });
+      
+      // 포커스 해제(blur)
+      inputEl.addEventListener('blur', function () {
+        parentEl.classList.remove('focused');
+      });
+
+      // 입력끝나고 완성됐을때 포커스 변경되었을때
+      inputEl.addEventListener('change', function () {
+        console.log('change 이벤트 발생!');
+        console.log(inputEl.value);
+        
+        // 입력값이 있으면
+        if (inputEl.value) {
+          parentEl.classList.add('on')
+        } else {
+          parentEl.classList.remove('on')
+        }
+        inputEl.value
+      });
+      inputEl.addEventListener('input', function () {
+        console.log('input 이벤트 발생!');
+      });
+    })
+
+    // material Icon 바꿀때
+    eyeIcon.addEventListener('click', function () {
+      if (pwInput.type === 'password') {
+        pwInput.type = 'text';
+        eyeIcon.textContent = 'visibility';
+        
+      } else {
+        pwInput.type = 'password';
+        eyeIcon.textContent = 'visibility_off';
+      }
+    })
+  </script>
 </body>
 </html>

@@ -154,8 +154,29 @@
       <hr>
       
       <!-- 범위 선택(기본값: 0~100) -->
-      <label for="volume">음량(0~10):</label>
-      <input type="range" id="volume" min="0" max="10" step="2">
+      <label for="volume">음량(0~100):</label>
+      <input type="range" id="volume" min="0" max="100" step="1" >
+      <span id="volumeValue"></span>
+
+      <script>
+        // const volumeRange = document.querySelector('#volume') 도 됨;
+        const volumeRange = document.getElementById('volume');
+        // console.log(volumeRange);
+        const volumnSpan = document.getElementById('volumeValue');
+        // console.log(volumnSpan);
+        volumeValue.textContent = volumeRange.value;
+
+        // volumeRange.addEventListener('change', function () {
+        // console.log(volumeRange.value);
+        // volumeValue.textContent = volumeRange.value;
+        // });
+        
+        volumeRange.addEventListener('input', function () {
+        // console.log(volumeRange.value);
+        volumeValue.textContent = volumeRange.value;
+        });
+        
+      </script>
 
       <hr>
 
