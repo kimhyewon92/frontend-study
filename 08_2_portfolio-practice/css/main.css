@@ -1,19 +1,18 @@
 * {
     box-sizing: border-box;
 }
+html {
+    /* 스크롤 이동을 부드럽게, 상속x 또다른 div안 스크롤 동작하려면 새로만들기 */
+    scroll-behavior: smooth;
+}
 body {
     font-family: "Noto Sans KR", sans-serif;
     font-size: 16px;
     line-height: 1.6;
     color: #333;
     overflow-x: hidden;
-
-    /* 테스트용 */
-    /* height: 3000px; */
-    
 }
-
-  /* 영문에만 적용할 폰트 */
+/* 영문에만 적용할 폰트 */
 .font-en {
     font-family: "Open Sans", sans-serif;
 }
@@ -23,6 +22,7 @@ body {
 }
 a {
     text-decoration: none;
+    font-size: 20px;
     /* color: #333; */
     /* inherit 는 색상 바뀔때 자동적용됨 */
     color: inherit;
@@ -34,6 +34,25 @@ a {
     /* 최대값만 제한 = 반응형 */
     max-width: 1200px;
     margin: 0 auto;
+}
+.title {
+    color: rgb(88, 198, 202);
+    font-size: 50px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.title::after {
+    content: "";
+    display: block;
+    width: 200px;
+    height: 4px;
+    background-color: rgb(88, 198, 202);
+    margin: 2px auto 0;
+}
+img {
+    /* 이미지가 인라인 요소라서 발생하는 문자 기준선(baseline) 아래의 공간을 제거하기 위해 */
+    display: block;
 }
 /* HEADER */
 header {
@@ -56,19 +75,14 @@ header > .inner {
     align-items: center;
 }
 header .inner .logo {
+    padding-left: 10px;
     font-weight: 700;
     font-size: 25px;
+    transition: 0.5s;
 }
-.logo li + li::before {
-    content: "";
-    display: block;
-    width: 1px;
-    height: 12px;
-    background-color: white;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
+header .inner .logo:hover {
+    color: rgb(88, 198, 202);
+    transform: scale(1.1);
 }
 header nav ul {
     display: flex;
@@ -77,12 +91,166 @@ header nav ul li {
     padding: 10px 20px;
     font-weight: 700;
 }
-.bg {
-    height: 700px;
-    /* background-color: pink; */
-    background-image: url("/08_2_portfolio-practice/image/work3.jpg");
+header nav ul li a{
+    position: relative;
+}
+header nav ul li a:hover {
+    color: rgb(88, 198, 202);
+    /* color: #209e63; */
+    /* 또는 그림자 */
+    /* text-shadow: 1px 1px 5px #209e63; */
+}
+/* borderbottom 도 가능 */
+header nav ul li a::before {
+    content: "";
+    display: block;
+    width: 0; /* 초기에는 밑줄이 없도록 0으로 설정*/
+    height: 1px;
+    background-color: rgb(88, 198, 202);
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    transition: 0.5s;
+}
+header nav ul li a:hover::before {
+    width: 100%;
+}
+
+/* VISUAL */
+.visual {
+    margin-top: 60px;
+    width: 100%;
+    background-image: url("/08_2_portfolio-practice/image/work_5.jpg");
     background-repeat: no-repeat;
-    background-position: center;
     background-size: cover;
-    background-attachment: fixed;
+    background-position: center;
+    opacity: 0.4;
+    text-align: center;
+}
+.visual .inner {
+    height: calc(100vh - 60px);
+    font-size: 70px;
+    display: flex;
+    align-items: center;
+}
+
+/* ABOUT */
+.about {
+    padding: 150px 0;
+}
+.about > .inner {
+    position: relative;
+}
+.about .about__wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.about .about__wrapper .about__img {
+    width: 40%;
+}
+.about .about__wrapper .about__img img {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.1);
+}
+.about .about__wrapper .about__text {
+    width: 40%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    /* 마진으로 띄어도 됨 */
+    justify-content: space-evenly;
+}
+.about .about__wrapper .about__text .slogan {
+    font-size: 35px;
+    font-weight: bold;
+}
+.about .about__wrapper .about__text h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+.about .about__wrapper .about__text h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+.about .about__wrapper .about__text li {
+    line-height: 1.8;
+}
+.about .about__btn {
+    position: absolute;
+    bottom: -30px;
+    right: 30px;
+}
+.about .about__btn span {
+    /* display: inline; */
+    vertical-align: middle;
+    /* width: 28px; */
+    margin-right: 0;
+}
+
+/* SKILL */
+.skill {
+    padding: 150px 0;
+    background-color: #000;
+    color: #fff;
+}
+.skill .title::after {
+    background-color: #fff;
+}
+.skill .skill__list {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+  /* 하위 선택자가 아닌 자식 선택자 쓴 것에 유의! */
+.skill .skill__list > li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    /* 방법1: position */
+    /* position: relative;
+    top: 100px; */
+    
+    /* 방법2: trasform translate */
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 1s;
+    
+}
+.skill.show .skill__list > li {
+    opacity: 1;
+    /* top: 0px; */
+    /* 방법2: trasform translate 렌더링시 속도가 늦어져서 translate사용이 적절
+    position 방법은 레이아웃을 다시 해야함 */
+    transform: translateY(0);
+}
+.skill .skill__list > li:nth-child(1) { transition-delay: 0.2s;}
+.skill .skill__list > li:nth-child(2) { transition-delay: 0.4s;}
+.skill .skill__list > li:nth-child(3) { transition-delay: 0.6s;}
+.skill .skill__list > li:nth-child(4) { transition-delay: 0.8s;}
+.skill .skill__list > li:nth-child(5) { transition-delay: 1s;}
+
+.skill .skill__list li div {
+    width: 50px;
+    height: 40px;
+    background-color: #209e63;
+    border-radius: 50%;
+    transform: rotate(-20deg);
+    transition: 0.5s;
+}
+  /* 적용대상 주의! */
+.skill .skill__list li:hover div {
+    transform: rotate(0deg);
+}
+.skill .skill__list li div p {
+    font-weight: bold;
+    font-size: 30px;
+    letter-spacing: -2px;
+}
+.skill .skill__list li h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 30px 0 20px;
 }
