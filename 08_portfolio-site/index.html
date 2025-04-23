@@ -244,12 +244,75 @@
             <li><span>URL : </span>배포 주소</li>
           </ul>
           <div class="btn-group">
-            <a href="javascript:void(0)" class="btn">README</a>
-            <a href="javascript:void(0)" class="btn btn--brown">모달</a>
+            <a href="javascript:void(0)" class="btn btn-modal">README</a>
+            <a href="javascript:void(0)" class="btn btn--brown btn-modal-image" data-image-src="images/work_1.jpg">이미지</a>
+          </div>
+        </div>
+      </div>
+      <div class="port">
+        <div class="port__img">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="images/work_3.jpg" alt="산출물3">
+              </div>
+              <div class="swiper-slide">
+                <img src="images/work_4.jpg" alt="산출물4">
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+        <div class="port__text">
+          <h3>프로젝트명</h3>
+          <ul>
+            <li><span>주요 기능 : </span>주요 기능 설명</li>
+            <li><span>적용 기술 : </span>HTML, CSS, JS, React, Java, Spring Boot</li>
+            <li><span>GitHub : </span>깃허브 주소</li>
+            <li><span>URL : </span>배포 주소</li>
+          </ul>
+          <div class="btn-group">
+            <a href="javascript:void(0)" class="btn btn-modal">README</a>
+            <a href="javascript:void(0)" class="btn btn--brown btn-modal-image" data-image-src="images/work_3.jpg">이미지</a>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- MODAL -->
+  <!-- 모달 배경 -->
+  <div id="modal">
+    <!-- 모달 내용 -->
+    <div class="modal-content">
+      <div class="modal-header">
+        README
+        <span class="material-symbols-outlined btn-close">close</span>
+      </div>
+      <div class="modal-body">
+        <p>여기에 모달 내용이 들어갑니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- IMAGE MODAL -->
+  <!-- 모달 배경 -->
+  <div id="imageModal">
+    <!-- 모달 내용 -->
+    <div class="modal-content">
+      <div class="modal-header">
+        이미지
+        <span class="material-symbols-outlined btn-close">close</span>
+      </div>
+      <div class="modal-body">
+        <!-- 방법1: 1픽셀 투명한 GIF -->
+        <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="이미지">
+        <!-- 방법2: 스타일로 display: none + src는 나중에 지정 -->
+        <!-- 방법3: 샘플 로딩 이미지 -->
+      </div>
+    </div>
+  </div>
 </body>
 </html>
