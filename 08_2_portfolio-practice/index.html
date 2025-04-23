@@ -15,6 +15,8 @@
 
   <link rel="stylesheet" href="css/main.css">
 
+  <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -71,7 +73,7 @@
       <div class="about__wrapper">
         <div class="about__img">
           <!-- 본인 프로필 이미지 넣기 -->
-          <img src="/05_CSS/images/logo.png" alt="프로필">
+          <img src="images/profile.jpg" alt="프로필">
         </div>
         <div class="about__text">
           <!-- 본인 슬로건, 이름(생년월일), 학력 또는 교육 사항 등 작성 -->
@@ -231,6 +233,46 @@
     </div>
   </section>
 
+  <!-- CONTACT -->
+  <section id="contact" class="contact font-en scroll-spy">
+    <div class="inner">
+      <h2 class="title">CONTACT</h2>
+      <div class="contact__info">
+        <ul>
+          <li>
+            <a href="https://github.com/geoblo" target="_blank">github.com/geoblo</a>
+          </li>
+          <li>010-1234-5678</li>
+          <li>geoblo@naver.com</li>
+        </ul>
+      </div>
+      <div class="contact__sns">
+        <ul>
+          <li>
+            <a href="#인스타그램주소" target="_blank">
+              <img src="images/icon/icon_insta.png" alt="인스타그램">
+            </a>
+          </li>
+          <li>
+            <a href="#유튜브주소" target="_blank">
+              <img src="images/icon/icon_youtube.png" alt="유튜브">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="inner">
+      <p class="copyright">
+        &copy; <span class="this-year"></span>
+        <span class="font-en">Kim Hye Won. All Rights Reserved.</span>
+      </p>
+    </div>
+  </footer>
+
   <!-- MODAL -->
   <!-- 모달 배경 -->
   <div id="modal">
@@ -264,11 +306,12 @@
     </div>
   </div>
 
-  <section id="contact" class="contact scroll-spy">
-    <div class="inner">
-      <h2 class="title font-en">CONTACT</h2>
-      
-    </div>
-  </section>
+  <!-- SCROLL TO TOP -->
+  <div id="to-top">
+    <a href="#">
+      <span class="material-symbols-outlined">arrow_upward</span>
+    </a>
+  </div>
+
 </body>
 </html>

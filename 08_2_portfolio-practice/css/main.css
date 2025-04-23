@@ -228,15 +228,16 @@ header nav ul li a:hover::before {
 }
 
 /* SKILL */
-.skill {
+.skill , .contact {
     padding: 150px 0;
     background-color: rgb(170, 170, 173);
     color: #fff;
 }
-.skill .title {
+.skill .title, .contact .title {
     color: #fff;
 }
-.skill .title::after {
+.skill .title::after,
+.contact .title::after {
     background-color: #fff;
 }
 .skill .skill__list {
@@ -338,6 +339,68 @@ header nav ul li a:hover::before {
 .project .port .btn-group {
     display: flex;
     column-gap: 40px;
+}
+
+/* CONTACT */
+.contact {
+    padding: 200px 0;
+    color: #000;
+}
+.contact .contact__info li {
+    line-height: 2;
+    text-align: center;
+}
+.contact .contact__sns {
+    margin-top: 20px;
+}
+.contact .contact__sns ul {
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+}
+.contact .contact__sns ul li img {
+    width: 30px;
+}
+/* 애니메이션 효과 추가 */
+.contact .contact__info li:nth-child(1),
+.contact .contact__info li:nth-child(3) {
+  /* 오른쪽에서 왼쪽으로 나타나는 */
+transform: translateX(150px);
+}
+.contact .contact__info li:nth-child(2) {
+  /* 오른쪽에서 왼쪽으로 나타나는 */
+transform: translateX(-150px);
+}
+.contact.show .contact__info li {
+transform: translateX(0);
+opacity: 1;
+}
+
+/* 애니메이션 효과 추가 */
+.contact .contact__sns ul li {
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 1s;
+}
+.contact.show .contact__sns ul li {
+    transform: translateY(0);
+    opacity: 1;
+}
+.contact .contact__sns li:nth-child(1) { transition-delay: 0.2s;}
+.contact .contact__sns li:nth-child(2) { transition-delay: 0.4s;}
+.contact .contact__sns ul li img {
+    width: 30px;
+}
+
+/* FOOTER */
+footer {
+    background-color: rgb(88, 198, 202);
+    color: #fff;
+}
+footer .copyright {
+    text-align: center;
+    font-weight: 600;
+    line-height: 100px;
 }
 
   /* MODAL */
