@@ -25,6 +25,9 @@
 
 </head>
 <body>
+
+  <div style="overflow-x: hidden;">
+    
   <!-- HEADER -->
   <header id="header">
     <div class="inner">
@@ -51,17 +54,23 @@
           </li>
         </ul>
       </nav>
+
+      <!-- 햄버거 버튼 -->
+      <a href="javascript:void(0)" class="btn-hamburger">
+        <span class="material-symbols-outlined">menu</span>
+      </a>
     </div>
   </header>
+
+  
 
   <!-- VISUAL -->
   <section class="visual">
     <div class="inner">
       <div class="opacity">
-        <h1 class="font-en">
-          안녕하세요! <br>
-          Full Stack Developer 김혜원 입니다.
-        </h1>
+        <div class="text_box">
+          <span class="text"></span><span class="blink">|</span>
+        </div>
       </div>  
     </div>
   </section>
@@ -235,7 +244,8 @@
 
   <!-- CONTACT -->
   <section id="contact" class="contact font-en scroll-spy">
-    <div class="inner">
+    <div class="inner postit_inner">
+      <div class="postit"></div>
       <h2 class="title">CONTACT</h2>
       <div class="contact__info">
         <ul>
@@ -272,6 +282,8 @@
       </p>
     </div>
   </footer>
+
+</div>
 
   <!-- MODAL -->
   <!-- 모달 배경 -->

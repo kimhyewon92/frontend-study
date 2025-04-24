@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>pure CSS만을 이용한 타이핑 효과 만들기</title>
+	<style>
+	/*css reset*/
+		body, h1 {margin:0; padding: 0}
+        
+        /* 배경 및 위치 CSS*/
+		body {
+			position: relative;
+			height: 100vh;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-image: linear-gradient(to right top, #b21697, #a534aa);
+		}
+        
+        /* 여기부터 타이핑 효과 적용 CSS*/
+		section{
+			display: inline-block;
+		}
+		h1	{
+			color: #ffffff;
+			font-size:100px;
+			overflow: hidden;
+			white-space: nowrap;
+			width: 0;
+			border-right: 0.5rem solid #b21697;
+			animation: typing steps(12, end) 2s forwards infinite;
+		}
+		@keyframes typing {
+			from{width:0 }
+			to{width: 100%}
+
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<h1>Hi, Designer</h1>
+	</section>
+
+<script type="text/javascript">
+</script>
+</body>
+</html>

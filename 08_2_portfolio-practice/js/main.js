@@ -13,6 +13,15 @@ spyEls.forEach(function (spyEl) {
 .addTo(controller); // 컨트롤러에 장면을 할당(필수!) - 라이브러리에서 지정한 문법으로 깊게 이해X
 });
 
+const postit = document.querySelector('.postit');
+  new ScrollMagic.Scene({ // 감시할 장면 추가 및 옵션 지정
+    triggerElement: postit, // 보여짐 여부를 감시할 요소를 지정
+    triggerHook: 0.6 // 화면의 50% 지점에서 보여짐 여부 감시(0~1사이 지정) (옵션)
+})
+.setClassToggle(postit, 'postit_turn') // 요소가 화면에 보이면 show 클래스 추가 (옵션)
+.addTo(controller); // 컨트롤러에 장면을 할당(필수!) - 라이브러리에서 지정한 문법으로 깊게 이해X
+
+
 // Swiper 사용
 const swiper = new Swiper('.project .swiper', {
   // 슬라이드 옵션 지정
@@ -70,3 +79,64 @@ imageCloseBtn.addEventListener('click', function () {
 // 모달 바깥 영역 클릭 시 닫기
 // ESC 키로 닫기
 // fade 애니메이션 넣기
+
+// 현재 연도 표시
+// 날짜 정보를 가진 JS의 Date 객체를 활용
+console.log(new Date().getFullYear());
+
+const thisYear = document.querySelector('.this-year');
+thisYear.textContent = new Date().getFullYear();
+
+// 페이지 최상단으로 이동
+const toTopEl = document.querySelector('#to-top');
+
+// 페이지에 스크롤 이벤트 감지를 추가!
+// window: 브라우저 창 객체
+window.addEventListener('scroll', function () {
+  // console.log(window.scrollY); // y축 스크롤 위치
+  
+  // 페이지 스크롤 위치가
+  // 500px을 넘으면 요소를 보이고,
+  // 500px을 넘지 않으면 요소 숨기기!
+  if (window.scrollY > 500) {
+    toTopEl.style.opacity = 1; // ''넣어도됨
+    toTopEl.style.transform = 'translateX(0)';
+  } else {
+    toTopEl.style.opacity = 0;
+    toTopEl.style.transform = 'translateX(100)';
+  }
+});
+
+// 모바일용 메뉴
+const btnHamburger = document.querySelector('.btn-hamburger');
+const navEl = document.querySelector('header nav');
+
+btnHamburger.addEventListener('click', function () {
+  // if (navEl.classList.contains('active')) {
+  //   navEl.classList.remove('active');
+  // } else {navEl.classList.add('active');}
+
+  navEl.classList.toggle('active');
+});
+
+const menuItems = document.querySelectorAll('header nav ul li a');
+
+menuItems.forEach(function (menuItem) {
+  menuItem.addEventListener('click', function() {
+    navEl.classList.remove('active');
+  });
+});
+
+const content = "안녕하세요 :) \n Full Stack Developer 김혜원입니다.";
+const text = document.querySelector(".text");
+let i = 0;
+
+function typing(){
+    let txt = content[i++];
+    text.innerHTML += txt=== "\n" ? "<br/>": txt;
+    if (i > content.length) {
+        text.textContent = "";
+        i = 0;
+    }
+}
+setInterval(typing, 200)
