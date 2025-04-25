@@ -16,11 +16,10 @@ spyEls.forEach(function (spyEl) {
 const postit = document.querySelector('.postit');
   new ScrollMagic.Scene({ // 감시할 장면 추가 및 옵션 지정
     triggerElement: postit, // 보여짐 여부를 감시할 요소를 지정
-    triggerHook: 0.6 // 화면의 50% 지점에서 보여짐 여부 감시(0~1사이 지정) (옵션)
+    triggerHook: 0.7 // 화면의 50% 지점에서 보여짐 여부 감시(0~1사이 지정) (옵션)
 })
 .setClassToggle(postit, 'postit_turn') // 요소가 화면에 보이면 show 클래스 추가 (옵션)
-.addTo(controller); // 컨트롤러에 장면을 할당(필수!) - 라이브러리에서 지정한 문법으로 깊게 이해X
-
+.addTo(controller);
 
 // Swiper 사용
 const swiper = new Swiper('.project .swiper', {
@@ -41,12 +40,12 @@ const swiper = new Swiper('.project .swiper', {
   // 이전/다음 슬라이드 버튼 옵션
   navigation: {
     nextEl: '.project .swiper-button-next',
-    prevEl: '.project .swiper-button-prev',
-  },
+    prevEl: '.project .swiper-button-prev'
+  }
 });
 
 // 모달창 띄우기
-const modalBtn = document.querySelector('.project .btn-modal')
+const modalBtns = document.querySelectorAll('.project .btn-modal')
 const modalEl = document.querySelector('#modal')
 const closeBtn = document.querySelector('#modal .btn-close')
 
@@ -58,11 +57,14 @@ const imageEl = document.querySelector('#imageModal img')
 // Quiz: 
 // style 속성: JS로 CSS 스타일을 제어할 수 있는 속성
 // 예시: 요소.style.CSS속성="";
-modalBtn.addEventListener('click', function () {
-  modalEl.style.display = 'flex';
-});
-closeBtn.addEventListener('click', function () {
-  modalEl.style.display = 'none';
+modalBtns.forEach(function (modalBtn) {
+  
+  modalBtn.addEventListener('click', function () {
+    modalEl.style.display = 'flex';
+  });
+  closeBtn.addEventListener('click', function () {
+    modalEl.style.display = 'none';
+  });
 });
 
 imageModalBtnList.forEach(function (imageModalBtn, index) {
@@ -139,4 +141,4 @@ function typing(){
         i = 0;
     }
 }
-setInterval(typing, 200)
+setInterval(typing, 130)

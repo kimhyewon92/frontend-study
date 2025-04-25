@@ -3,6 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Hyewon's Portfolio" />
+  <meta property="og:title" content="Hyewon | Full Stack Developer" />
+  <meta property="og:description" content="React, Node.js 기반의 웹 개발을 전문으로 하는 풀스택 개발자 포트폴리오입니다." />
+  <meta property="og:image" content="https://your-domain.com/images/thumbnail.png" />
+  <meta property="og:url" content="https://your-domain.com" />
+  
   <title>김혜원 포트폴리오</title>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
@@ -32,7 +40,7 @@
   <header id="header">
     <div class="inner">
       <!-- 로고 -->
-      <a href="index.html" class="logo">
+      <a href="index.html" class="homeLogo">
         <!-- 본인의 로고를 이미지로 제작 시 기존 파일과 교체, 만약 텍스트로 넣을거면 img 요소 제거하고 텍스트 입력 -->
         KHW's Portfolio
       </a>
@@ -91,8 +99,8 @@
           <div>
             <h4 class="font-en">EDUCATION</h4>
             <ul>
-              <li>10.03 ~ 12.02 OO학교 OO과 졸업</li>
-              <li>25.04 ~ 25.10 클라우드(AWS)활용 자바/스프링 개발 부트캠프 수료</li>
+              <li><span>10.03 ~ 12.02</span> OO학교 OO과 졸업</li>
+              <li><span>25.04 ~ 25.10</span> 클라우드(AWS)활용 자바/스프링 개발 부트캠프 수료</li>
             </ul>
           </div>
         </div>
@@ -118,57 +126,58 @@
         <li>
           <div class="font-en">
             <p>Java</p>
+            <h3 class="font-en">Java<br>Programing</h3>
+            <ul>
+              <li>객체지향</li>
+              <li>파일 입출력</li>
+              <li>JDBC</li>
+            </ul>
           </div>
-          <h3 class="font-en">Java<br>Programing</h3>
-          <ul>
-            <li>객체지향</li>
-            <li>파일 입출력</li>
-            <li>JDBC</li>
-          </ul>
         </li>
         <li>
           <div class="font-en">
             <p>Html</p>
+            <h3 class="font-en">HTML5</h3>
+            <ul>
+              <li>웹페이지 구조 설계</li>
+              <li>시맨틱 태그</li>
+            </ul>
           </div>
-          <h3 class="font-en">HTML5</h3>
-          <ul>
-            <li>웹페이지 구조 설계</li>
-            <li>시맨틱 태그</li>
-          </ul>
         </li>
         <li>
           <div class="font-en">
             <p>Css</p>
+            <h3 class="font-en">CSS3</h3>
+            <ul>
+              <li>웹페이지 레이아웃 설계</li>
+              <li>웹페이지 디자인</li>
+              <li>반응형 제작</li>
+            </ul>
           </div>
-          <h3 class="font-en">CSS3</h3>
-          <ul>
-            <li>웹페이지 레이아웃 설계</li>
-            <li>웹페이지 디자인</li>
-            <li>반응형 제작</li>
-          </ul>
         </li>
         <li>
           <div class="font-en">
             <p>Js</p>
+            <h3 class="font-en">JavaScript</h3>
+            <ul>
+              <li>DOM 조작, 제어</li>
+              <li>이벤트 처리</li>
+              <li>비동기 통신</li>
+            </ul>
           </div>
-          <h3 class="font-en">JavaScript</h3>
-          <ul>
-            <li>DOM 조작, 제어</li>
-            <li>이벤트 처리</li>
-            <li>비동기 통신</li>
-          </ul>
         </li>
         <li>
           <div class="font-en">
-            <p>React</p>
+              <p>React</p>
+            
+            <h3 class="font-en">React JS</h3>
+            <ul>
+              <li>SPA 개발</li>
+              <li>전역 상태 관리</li>
+              <li>클라이언트 라우팅</li>
+              <li>CSR 방식 앱개발</li>
+            </ul>
           </div>
-          <h3 class="font-en">React JS</h3>
-          <ul>
-            <li>SPA 개발</li>
-            <li>전역 상태 관리</li>
-            <li>클라이언트 라우팅</li>
-            <li>CSR 방식 앱개발</li>
-          </ul>
         </li>
       </ul>
     </div>
@@ -184,10 +193,10 @@
           <div class="swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img src="images/work_1.jpg" alt="산출물1">
+                <img src="images/capture.png" alt="산출물1">
               </div>
               <div class="swiper-slide">
-                <img src="images/work_2.jpg" alt="산출물2">
+                <img src="images/capture2.png" alt="산출물2">
               </div>
             </div>
             <div class="swiper-pagination"></div>
@@ -196,16 +205,16 @@
           </div>
         </div>
         <div class="port__text">
-          <h3>프로젝트명</h3>
+          <h3>포트폴리오 사이트</h3>
           <ul>
             <li><span>주요 기능 : </span>주요 기능 설명</li>
-            <li><span>적용 기술 : </span>HTML, CSS, JS, React, Java, Spring Boot</li>
+            <li><span>적용 기술 : </span>HTML, CSS, JS</li>
             <li><span>GitHub : </span>깃허브 주소</li>
             <li><span>URL : </span>배포 주소</li>
           </ul>
           <div class="btn-group">
             <a href="javascript:void(0)" class="btn btn-modal">README</a>
-            <a href="javascript:void(0)" class="btn btn--brown btn-modal-image" data-image-src="images/work_1.jpg">이미지</a>
+            <a href="javascript:void(0)" class="btn btn--brown btn-modal-image" data-image-src="images/capture.png">이미지</a>
           </div>
         </div>
       </div>
@@ -250,10 +259,10 @@
       <div class="contact__info">
         <ul>
           <li>
-            <a href="https://github.com/geoblo" target="_blank">github.com/geoblo</a>
+            <a href="https://github.com/kimhyewon92" target="_blank">github.com/kimhyewon92</a>
           </li>
           <li>010-1234-5678</li>
-          <li>geoblo@naver.com</li>
+          <li>123456@naver.com</li>
         </ul>
       </div>
       <div class="contact__sns">

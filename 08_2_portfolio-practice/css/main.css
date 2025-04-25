@@ -76,7 +76,7 @@ header {
     background-color: #fff;
     border-bottom: 1px solid #c8c8c8;
     /* 그림자 : 수평 수직 blur 색깔 순서 */
-    box-shadow: 0 2px 8px rgba(204, 204, 204, 0.8);
+    box-shadow: 8px 8px 8px rgba(204, 204, 204, 0.8);
 
     /* 고정된 헤더 만들기 */
     /* fixed가 되면 width의 기준이 부모 요소가 아니라 뷰포트가 되면서 기준이 끊겨버리고, 내용에 맞춰 최소한으로 축소됨 */
@@ -91,13 +91,13 @@ header > .inner {
     justify-content: space-between;
     align-items: center;
 }
-header .inner .logo {
+header .inner .homeLogo {
     padding-left: 10px;
     font-weight: 700;
     font-size: 25px;
     transition: 0.5s;
 }
-header .inner .logo:hover {
+header .inner .homeLogo:hover {
     color: rgb(88, 198, 202);
     transform: scale(1.1);
 }
@@ -150,7 +150,7 @@ header .btn-hamburger .material-symbols-outlined {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    opacity: 1;
+    /* opacity: 1; */
     position: relative;
 }
 .visual .inner {
@@ -254,21 +254,23 @@ header .btn-hamburger .material-symbols-outlined {
     display: flex;
     justify-content: space-evenly;
     text-align: center;
+    flex-wrap: wrap;
 }
   /* 하위 선택자가 아닌 자식 선택자 쓴 것에 유의! */
 .skill .skill__list > li {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 10px 10px;
     
     /* 방법1: position */
     /* position: relative;
     top: 100px; */
     
     /* 방법2: trasform translate */
-    transform: translateY(100px);
-    opacity: 1;
-    transition: 1s;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: 0.6s;
     
 }
 .skill.show .skill__list > li {
@@ -278,19 +280,23 @@ header .btn-hamburger .material-symbols-outlined {
     position 방법은 레이아웃을 다시 해야함 */
     transform: translateY(0);
 }
-.skill .skill__list > li:nth-child(1) { transition-delay: 0.2s;}
-.skill .skill__list > li:nth-child(2) { transition-delay: 0.4s;}
-.skill .skill__list > li:nth-child(3) { transition-delay: 0.6s;}
-.skill .skill__list > li:nth-child(4) { transition-delay: 0.8s;}
-.skill .skill__list > li:nth-child(5) { transition-delay: 1s;}
+.skill .skill__list > li:nth-child(1) { transition-delay: 0.1s;}
+.skill .skill__list > li:nth-child(2) { transition-delay: 0.2s;}
+.skill .skill__list > li:nth-child(3) { transition-delay: 0.3s;}
+.skill .skill__list > li:nth-child(4) { transition-delay: 0.4s;}
+.skill .skill__list > li:nth-child(5) { transition-delay: 0.5s;}
 
 .skill .skill__list li div {
-    width: 50px;
-    height: 40px;
-    background-color: rgb(88, 198, 202);
-    border-radius: 50%;
-    transform: rotate(-20deg);
-    transition: 0.5s;
+    width: 180px;
+    height: 280px;
+    background-color: white;
+    border-radius: 10px;
+    /* transform: rotate(0deg); */
+    padding: 20px 10px;
+    /* transform: rotateY('180deg'); */
+    box-shadow: 0 5px 8px rgba(104, 103, 103, 0.8);
+    border: 5px solid rgb(88, 198, 202);
+
 }
   /* 적용대상 주의! */
 .skill .skill__list li:hover div {
@@ -298,6 +304,7 @@ header .btn-hamburger .material-symbols-outlined {
 }
 .skill .skill__list li div p {
     font-weight: bold;
+    color: rgb(88, 198, 202);
     font-size: 30px;
     letter-spacing: -2px;
 }
@@ -307,7 +314,9 @@ header .btn-hamburger .material-symbols-outlined {
     margin: 30px 0 20px;
     color: rgb(74, 73, 73);
 }
-
+.skill .skill__list li .font-en ul li {
+    color: rgb(74, 73, 73);
+}
 /* PROJECT */
 .project {
     padding: 150px 0;
@@ -349,7 +358,7 @@ header .btn-hamburger .material-symbols-outlined {
 }
 .project .port .btn-group {
     display: flex;
-    column-gap: 40px;
+    column-gap: 20px;
 }
 
 /* CONTACT */
@@ -359,11 +368,14 @@ header .btn-hamburger .material-symbols-outlined {
 }
 .contact .contact__info {
     margin-top: 110px;
-    /* margin-bottom: -50px; */
 }
 .contact .contact__info li {
     line-height: 2;
     text-align: center;
+    opacity: 0;
+}
+.contact .contact__info li a {
+    font-size: 17px;
 }
 .contact .contact__sns {
     margin-top: 20px;
@@ -375,11 +387,6 @@ header .btn-hamburger .material-symbols-outlined {
 }
 .contact .contact__sns ul li img {
     width: 30px;
-}
-
-.contact .contact__info li {
-    opacity: 0;
-    transition: 1.2s;
 }
 .contact.show .contact__info li {
 transform: translateX(0);
@@ -396,8 +403,8 @@ opacity: 1;
     transform: translateY(0);
     opacity: 1;
 }
-.contact .contact__sns li:nth-child(1) { transition-delay: 0.2s;}
-.contact .contact__sns li:nth-child(2) { transition-delay: 0.4s;}
+.contact .contact__sns li:nth-child(1) { transition-delay: 0.1s;}
+.contact .contact__sns li:nth-child(2) { transition-delay: 0.3s;}
 .contact .contact__sns ul li img {
     width: 30px;
 }
@@ -427,7 +434,9 @@ footer .copyright {
     justify-content: center;
     align-items: center;
     display: none; /* 처음엔 숨김 */
-
+}
+#imageModal img {
+    width: 600px;
 }
 #modal .modal-content,
 #imageModal .modal-content {
@@ -527,10 +536,11 @@ footer .copyright {
         color: gray;
     }
     header nav ul li a {
+        font-size: 30px;
         transition: 0.5s;
     }
     header nav ul li a:hover {
-        letter-spacing: 10px;
+        letter-spacing: 4px;
     }
     
     .visual > .inner {
@@ -564,7 +574,7 @@ footer .copyright {
         width: 100%;
     }
     .project .port .port__text {
-        padding: 20px 0 0;
+        padding: 0;
     }
     .contact {
         padding: 100px 0;
@@ -581,18 +591,44 @@ footer .copyright {
         font-size: 14px
     }
     .postit {
+    top: 10px;
+    height: 300px;
+    width: 300px;
         
+    }
+    .contact {
+        color: rgb(74, 73, 73);
+    }
+    .text_box{
+        font-size: 2rem;
+        margin-top: 200px;
+    }
+    .skill .skill__list > li {
+        width: calc(50% - 20px);
+    }
+    header .inner .homeLogo {
+        font-size: 20px;
+    }
+    span.text {
+        font-size: 35px;
+    }
+    .contact .contact__info {
+        margin-top: 150px;
+    }
+    .about .about__wrapper .about__text h4 {
+        margin-top: 22px;
+        margin-bottom: 8px;
+    }
+    strong + h3 {
+        /* margin-top: 20px; */
     }
 }
 
-
-
-.text_box{
-    /* height: 250px; */
+.text_box {
     font-size: 3rem;
     text-align: center;
     color: gray;
-    margin-top: 200px;
+    margin-top: 300px;
     text-shadow: 0 0 10px rgb(255, 255, 255);
 }
 
@@ -609,17 +645,16 @@ footer .copyright {
 
 .postit {
     background-color: lightyellow;
-    height: 300px;
-    width: 300px;
+    height: 250px;
+    width: 250px;
     box-shadow: 0 2px 8px rgba(104, 103, 103, 0.8);
     position: absolute;
-    /* margin: 0 auto; */
-    top: 150px;
+    top: 140px;
     left: 0;
     right: 0;
     margin: auto;
-    transform: rotate(7deg);
-    transition: 0.5s;
+    transform: rotate(8deg);
+    transition: 0.4s;
 }
 .postit_inner {
     position: relative;
@@ -627,12 +662,6 @@ footer .copyright {
 .postit_turn {
     transform: rotate(0.8deg);
 }
-
-
-
-
-/* 메뉴 눌렀을때 배경및css
-css 더블체크
-프로젝트에 포트폴리오 사이트 캡처본넣기
-스킬이 없다가 확나왔
-스크롤 아래로 내리도록 화살표 표시 아래아래 */
+.about .about__text ul span {
+    font-weight: 600;
+}
