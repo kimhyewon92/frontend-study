@@ -6,22 +6,65 @@
   <title>Document</title>
 
   <style>
-  
+    .imgSizeAdj img {
+      margin-top: 30px;
+    }
   </style>
 
 </head>
 <body>
-  <h1>자라나라 스폰지밥</h1>
-  <button type="button">+</button>
-  <img src="../05_CSS/images/logo_resize.png" alt="이미지">
-
+  <!-- 자라나라 스폰지밥 -->
+  <div class="jaranara">
+    <h1>자라나라 스폰지밥</h1>
+    <div><button type="button" class="scaleBtn">+</button></div>
+    <img src="../05_CSS/images/logo_resize.png" alt="이미지" class="scaleImg">
+  </div>
   <hr>
-  <h1>이미지 크기 조정</h1>
-  <input type="text">가로:
-  <input type="text">세로:
-  <button type="button">변경</button>
-  
+
+  <!-- 이미지 크기 조정 -->
+  <div class="imgSizeAdj">
+    <h1>이미지 크기 조정</h1>
+    <div>
+      가로 : <input type="number" name="" id="width"><br>
+      세로 : <input type="number" name="" id="height">
+      <button type="button" class="adjustBtn">변경</button>
+    </div>
+    <img src="../05_CSS/images/logo_resize.png" alt="이미지" class="adjustImg">
+  </div>
+
+
+  </div>
   <script>
+    // 자라나라 스폰지밥
+    const scaleBtn = document.querySelector('.scaleBtn');
+    const scaleImg = document.querySelector('.scaleImg');
+    let scaleImgWidth = scaleImg.width;
+    console.log(scaleImgWidth);
+    
+    scaleBtn.addEventListener('click', function () {
+      scaleImgWidth += 100;
+      console.log(scaleImgWidth);
+      scaleImg.width = scaleImgWidth;
+    });
+
+    // 이미지 크기 조정
+    const adjustBtn = document.querySelector('.adjustBtn');
+    let adjustImg = document.querySelector('.adjustImg');
+    
+    adjustBtn.addEventListener('click', function () {
+      let inputWidth = document.getElementById('width').value;
+      console.log(inputWidth);
+      adjustImg.width = inputWidth;
+      
+      let inputHeight = document.getElementById('height').value;
+      console.log(inputHeight);
+      adjustImg.height = inputHeight;
+
+      
+      // 변경 버튼 누르면 input 값들을 가져오기
+      // 가져온 값으로 이미지 크기 조정하기
+    });
+
 
   </script>
 </body>
