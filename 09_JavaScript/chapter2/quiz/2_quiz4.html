@@ -26,11 +26,13 @@
     const height = prompt('당신의 신장은?', '0');
     const weight = prompt('당신의 몸무게는?', '0');
     
-    const averageWeight = (height - 100) * 0.9
+    const averageWeight = (height - 100) * 0.9;
 
-    result = weight >= averageWeight-5 && weight <= averageWeight+5 ? name + '님은 적정 체중입니다.' : name + '님은 적정 체중이 아닙니다';
+    let result = weight >= averageWeight-5 && weight <= averageWeight+5 ? name + '님은 적정 체중입니다.' : name + '님은 적정 체중이 아닙니다';
     // result = weight >= averageWeight ? name + '님은 적정 체중입니다.' : name + '님은 적정 체중이 아닙니다';
-    document.write(result, '<br>');
+    document.write(`평균 체중은 ${averageWeight}<br>`);
+    document.write(`내 체중은 ${weight}<br>`);
+    document.write(`${name}님은 ${result}`);
 
   </script>
 </body>

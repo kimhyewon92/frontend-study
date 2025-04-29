@@ -29,8 +29,8 @@
     const sum = price1 + price2 + price3;
     const properSum = 10000;
 
-    result = sum >= properSum ? (sum-properSum)+'원 초과' : '돈 관리 잘 했어요!';
-    document.write(result, '<br>');
+    const result = sum > properSum ? (sum-properSum)+'원 초과' : '돈 관리 잘 했어요!';
+    document.write(result);
 
   </script>
 </body>

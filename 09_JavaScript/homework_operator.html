@@ -10,23 +10,96 @@
       font-size: 50px;
       font-weight: 500;
     }
+    span {
+      font-size: 20px;
+    }
+    .btns {
+      margin-top: 20px;
+    }
+    
   </style>
 </head>
 <body>
-  <h1>구슬 놀이</h1>
+  <h1>1. 구슬 놀이</h1>
+  <span>홀수? 짝수?</span>
+  <div class="btns">
+    <button type="button" class="add">구슬 추가</button>
+    <button type="button" class="oddEven">홀짝</button>
+    <button type="button" class="reset">초기화</button>
+  <div class="beads"></div>
+  </div>
 
   <hr>
   <div class="calculator">
     <h1>2. 간이 계산기</h1>
     <p>계산기</p>
-    첫번째 값 : <input type="number" name="" id="num1"><br>
-    두번째 값 : <input type="number" name="" id="num2">
-      <button type="button" class="adjustBtn">변경</button>
+    <div class="numbers">
+      <span>첫번째 값 : </span><input type="number" name="" id="num1"><br>
+      <span>두번째 값 : </span><input type="number" name="" id="num2">
+    </div>
+    <div class="operatorBtns">
+      <button type="button" class="operator1">+</button>
+      <button type="button" class="operator2">-</button>
+      <button type="button" class="operator3">X</button>
+      <button type="button" class="operator4">/</button>
+      <button type="button" class="operator5">%</button>
+    </div>
+    <hr>
+    <span>계산 결과 :</span><span class="results"></span>
+    <hr>
   </div>
-    <h1>연산자 총정리</h1>
 
     <script>
+      // 구슬 놀이
+      const beads = document.querySelector('.beads');
+      const button1 = document.querySelector('.add');
+      const button2 = document.querySelector('.oddEven');
+      const button3 = document.querySelector('.reset');
 
+
+
+
+
+      // 간이 계산기
+      const results = document.querySelector('.results');
+      
+      const operator1 = document.querySelector('.operator1');
+      const operator2 = document.querySelector('.operator2');
+      const operator3 = document.querySelector('.operator3');
+      const operator4 = document.querySelector('.operator4');
+      const operator5 = document.querySelector('.operator5');
+      
+      operator1.addEventListener('click', function () {
+        const num1 = Number(document.getElementById('num1').value);
+        const num2 = Number(document.getElementById('num2').value);
+        const result = num1 + num2;
+        results.textContent = result;
+      });
+      operator2.addEventListener('click', function () {
+        const num1 = Number(document.getElementById('num1').value);
+        const num2 = Number(document.getElementById('num2').value);
+        const result = num1 - num2;
+        results.textContent = result;
+      });
+      operator3.addEventListener('click', function () {
+        const num1 = Number(document.getElementById('num1').value);
+        const num2 = Number(document.getElementById('num2').value);
+        const result = num1 * num2;
+        results.textContent = result;
+      });
+      operator4.addEventListener('click', function () {
+        const num1 = Number(document.getElementById('num1').value);
+        const num2 = Number(document.getElementById('num2').value);
+        const result = num1 / num2;
+        results.textContent = result;
+      });
+      operator5.addEventListener('click', function () {
+        const num1 = Number(document.getElementById('num1').value);
+        const num2 = Number(document.getElementById('num2').value);
+        const result = num1 % num2;
+        results.textContent = result;
+      });
+    
     </script>
 </body>
 </html>

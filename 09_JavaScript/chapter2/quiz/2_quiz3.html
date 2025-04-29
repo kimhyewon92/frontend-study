@@ -32,8 +32,9 @@
     // document.write(averageQ123);
     const salesQ4 = Number(prompt('4분기 판매량', 0));
     
-    result = salesQ4 >= averageQ123 ? '판매량이 평균 이상입니다.' : '판매량이 평균 미달입니다.';
-    document.write(result, '<br>');
+    const result = salesQ4 >= averageQ123 ? '판매량이 평균 이상입니다.' : '판매량이 평균 미달입니다.';
+    document.write(`1~3분기 평균 판매량: ${averageQ123} <br>`);
+    document.write(result);
     
 
   </script>
