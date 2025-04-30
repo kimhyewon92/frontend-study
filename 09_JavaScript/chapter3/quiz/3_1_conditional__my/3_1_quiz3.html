@@ -29,12 +29,15 @@
       } else {
         document.write('불합격');
       }
-    } else {
-      if (score >= 70) {
+    } else if (grade >= 4 && grade <= 6) {
+        if (score >= 70) {
         document.write('합격');
       } else {
         document.write('불합격');
+        document.write('합격');
       }
+    } else {
+      document.write('에러입니다.');
     }
   </script>
 </body>
