@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    /* 1번 */
+    .bead {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: aqua;
+      margin: 3px;
+    }
+    .plate {
+      display: flex;
+      margin-top: 20px;
+      
+    }
+
+    /* 2번 */
+    .calculator p {
+      font-size: 50px;
+      font-weight: 500;
+    }
+    span {
+      font-size: 20px;
+    }
+    .btns {
+      margin-top: 20px;
+    }
+    
+  </style>
+</head>
+<body>
+  <!-- 1번 -->
+  <h1>홀수? 짝수?</h1>
+  <button type="button" class="btn-add" onclick="add()">구슬 추가</button>
+  <button type="button" class="btn-count" onclick="count()">홀짝</button>
+  <button type="button" class="btn-clear" onclick="clear()">초기화</button>
+  <div class="plate">
+    <!-- 구슬이 들어갈 자리 -->
+  </div>
+
+  <script>
+    // 1번
+    const beadTag = '<div class="bead"></div>';
+    const plate = document.querySelector('.plate');
+    
+    function add() {
+      plate.innerHTML += beadTag;
+    }
+    
+    function count() {
+      const beads = document.querySelectorAll('.bead');
+      if (beads.length%2 === 0) {
+        alert('짝수입니다.')
+      }
+      else if (beads.length%2 === 1) {
+        alert('홀수입니다.')
+      }
+    }
+    
+    function clear() {
+      // const beads = document.querySelectorAll('.bead');
+      // beads.remove();
+      // beads.forEach(function (bead) {
+      //   bead.remove();
+      // })
+    }
+    
+  </script>
+
+  <hr>
+  <!-- 2번 -->
+  <div class="calculator">
+    <h1>2. 간이 계산기</h1>
+    <p>계산기</p>
+    <div class="numbers">
+      <span>첫번째 값 : </span><input type="number" name="" id="num1"><br>
+      <span>두번째 값 : </span><input type="number" name="" id="num2">
+    </div>
+    <div class="operatorBtns">
+      <button type="button" class="operator1">+</button>
+      <button type="button" class="operator2">-</button>
+      <button type="button" class="operator3">X</button>
+      <button type="button" class="operator4">/</button>
+      <button type="button" class="operator5">%</button>
+    </div>
+    <hr>
+    <span>계산 결과 :</span><span class="results"></span>
+    <hr>
+  </div>
+
+  <script>
+    // 2번
+    const results = document.querySelector('.results');
+    
+    const operator1 = document.querySelector('.operator1');
+    const operator2 = document.querySelector('.operator2');
+    const operator3 = document.querySelector('.operator3');
+    const operator4 = document.querySelector('.operator4');
+    const operator5 = document.querySelector('.operator5');
+    
+    operator1.addEventListener('click', function () {
+      const num1 = Number(document.getElementById('num1').value);
+      const num2 = Number(document.getElementById('num2').value);
+      const result = num1 + num2;
+      results.textContent = result;
+    });
+    operator2.addEventListener('click', function () {
+      const num1 = Number(document.getElementById('num1').value);
+      const num2 = Number(document.getElementById('num2').value);
+      const result = num1 - num2;
+      results.textContent = result;
+    });
+    operator3.addEventListener('click', function () {
+      const num1 = Number(document.getElementById('num1').value);
+      const num2 = Number(document.getElementById('num2').value);
+      const result = num1 * num2;
+      results.textContent = result;
+    });
+    operator4.addEventListener('click', function () {
+      const num1 = Number(document.getElementById('num1').value);
+      const num2 = Number(document.getElementById('num2').value);
+      const result = num1 / num2;
+      results.textContent = result;
+    });
+    operator5.addEventListener('click', function () {
+      const num1 = Number(document.getElementById('num1').value);
+      const num2 = Number(document.getElementById('num2').value);
+      const result = num1 % num2;
+      results.textContent = result;
+    });    
+  </script>
+
+    <!-- 4번 -->
+  <h1>문자 누적하기</h1>
+  <input type="text" id="stackData">
+  <button type="button" class="btn-stack" onclick="accumulate()">누적</button>
+  <br><br>
+  <textarea id="resultArea" cols="30" rows="5"></textarea>
+
+  <script>
+    // 4번
+    const stackData = document.querySelector('#stackData');
+    const resultArea = document.querySelector('#resultArea');
+
+    function accumulate() {
+      resultArea.textContent += stackData.value;
+      stackData.value = '';
+    }
+  </script>
+</body>
+</html>
