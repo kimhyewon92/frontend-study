@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>연산자 과제</title>
 
   <style>
     /* 1번 */
@@ -39,7 +39,7 @@
   <h1>홀수? 짝수?</h1>
   <button type="button" class="btn-add" onclick="add()">구슬 추가</button>
   <button type="button" class="btn-count" onclick="count()">홀짝</button>
-  <button type="button" class="btn-clear" onclick="clear()">초기화</button>
+  <button type="button" class="btn-clear" onclick="reset()">초기화</button>
   <div class="plate">
     <!-- 구슬이 들어갈 자리 -->
   </div>
@@ -63,12 +63,8 @@
       }
     }
     
-    function clear() {
-      // const beads = document.querySelectorAll('.bead');
-      // beads.remove();
-      // beads.forEach(function (bead) {
-      //   bead.remove();
-      // })
+    function reset() {
+      plate.innerHTML = "";
     }
     
   </script>
