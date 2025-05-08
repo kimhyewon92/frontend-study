@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>내장객체 실습과제</title>
+</head>
+<body>
+  <button type="button" onclick="changeBgColor()">바꾸기</button>
+
+  <script>
+    function changeBgColor() {
+      const bodyTag = document.querySelector('body');
+
+      const red = Math.floor(Math.random() * (255 - 0 + 1));
+      const green = Math.floor(Math.random() * (255 - 0 + 1));
+      const blue = Math.floor(Math.random() * (255 - 0 + 1));
+      
+      bodyTag.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+    }
+  </script>
+</body>
+</html>

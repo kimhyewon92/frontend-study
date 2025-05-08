@@ -15,16 +15,17 @@
     const arrLength = Number(prompt('생성할 배열의 길이를 입력하세요.', '2'));
     const arr = [];
 
+    // 풀이5
     for (let i = 0; i < arrLength; i++) {
       const arrData = prompt('생성할 데이터를 입력하세요.');
       arr.push(arrData);
+      // arr.push(prompt('생성할 데이터를 입력하세요.'));
     }
-    console.log(arr[0]);
-    arr.reverse();
-    console.log(arr[0]);
 
-    
-    // 풀이5
+    if (arr.length > 0) {
+      document.write(arr.shift(), '<br>'); // 배열의 첫번째 요소를 제거하고 반환
+      document.write(arr.pop(), '<br>'); // 배열의 마지막 요소를 제거하고 반환
+    }
     
   </script>
 </head>
